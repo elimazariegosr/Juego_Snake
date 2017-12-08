@@ -13,6 +13,7 @@ public class Tablero {
     private int base, altura;
     private char [][] tamañoMatriz;
 
+    public Tablero(){}
     public Tablero(int base, int altura, char[][] tamañoMatriz) {
         this.base = base;
         this.altura = altura;

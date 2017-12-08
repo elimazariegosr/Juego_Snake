@@ -10,7 +10,7 @@ package juego_snake;
  * @author Mazariegos
  */
 public class Posicion {
-    protected int x,y=0;
+    protected int x,y;
     protected char figura;
     
     public Posicion(){}
