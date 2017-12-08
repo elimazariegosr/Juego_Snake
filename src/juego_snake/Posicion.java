@@ -30,6 +30,14 @@ public class Posicion {
     }
     public int getY(){return y;}
 
+    public char getFigura() {
+        return figura;
+    }
+
+    public void setFigura(char figura) {
+        this.figura = figura;
+    }
+    
     @Override
     public String toString() {
         return "Posicion{" + "x=" + x + ", y=" + y + ", figura=" + figura + '}';

@@ -16,6 +16,8 @@ public class Juego_Snake {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+          MenuOpcion menu = new MenuOpcion();
+          menu.opciones();
     }
     
 }
