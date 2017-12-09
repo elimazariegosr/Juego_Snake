@@ -12,10 +12,13 @@ package juego_snake;
 public class AccionSnake extends Posicion {
     
     //Constructor AccionSnake que recibe a la culebrita a donde moverse
-    public AccionSnake( char figura,int x, int y){
-        setX(x);
-        setY(y);
+    public AccionSnake( char figura){
         setFigura(figura);
+    }
+    
+    public void agregarSnakeAleatorio(Tablero tablero, AccionSnake accionSnake){
+        tablero.setPosicionSnake(accionSnake,(int)(Math.random() * (tablero.getAncho()-1))
+                ,(int)(Math.random() * (tablero.getAltura()-1)));
     }
     public void arriba(){
     }

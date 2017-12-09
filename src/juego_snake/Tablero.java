@@ -33,7 +33,7 @@ public class Tablero {
     public void tabPosicion(){
         for(int i = 0; i < this.altura ;i++){
             for(int j = 0; j < this.ancho ; j++){
-                this.tamañoMatriz[i][j]='P';
+                this.tamañoMatriz[i][j]=' ';
             }
         }
     }
