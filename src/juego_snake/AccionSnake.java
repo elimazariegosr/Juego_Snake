@@ -12,7 +12,7 @@ package juego_snake;
 public class AccionSnake extends Posicion {
     
     //Constructor AccionSnake que recibe a la culebrita a donde moverse
-    public AccionSnake(int x, int y, char figura){
+    public AccionSnake( char figura,int x, int y){
         setX(x);
         setY(y);
         setFigura(figura);

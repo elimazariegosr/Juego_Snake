@@ -46,5 +46,13 @@ public class Tablero {
     public void setPosicionSnake(Posicion pos,int x, int y){
         this.tamañoMatriz[y][x] = pos.getFigura();
     }
+
+    public int getAncho() {
+        return this.ancho;
+    }
+
+    public int getAltura() {
+        return this.altura;
+    }
     
 }
