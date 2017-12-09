@@ -10,14 +10,17 @@ package juego_snake;
  * @author Mazariegos
  */
 public class Juego_Snake {
-
-    /**
-     * @param args the command line arguments
-     */
+        
+        
     public static void main(String[] args) {
-        // TODO code application logic here
-          MenuOpcion menu = new MenuOpcion();
-         menu.opciones();
+        int base=70;
+        int altura=35;
+
+        /* MenuOpcion menu = new MenuOpcion();
+         menu.opciones();*/
+        //probando tablero
+         Tablero tablero = new Tablero(base,altura);
+         tablero.mostrarTablero();
     }
     
 }
