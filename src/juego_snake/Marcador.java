@@ -12,12 +12,15 @@ import java.util.Date;
  * @author Mazariegos
  */
 public class Marcador {
-    String nombre="";
-    Date fechaNacimiento=null;
-    int punteo =0;
-    int movimientos=0;
+    String nombre;
+    String fechaNacimiento;
+    int punteo =10;
+    int movimientos;
 
-    public Marcador(String nombre, Date fechaNacimiento, int punteo,int movimientos) {
+    public Marcador() {
+    }
+
+    public Marcador(String nombre, String fechaNacimiento, int punteo,int movimientos) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.punteo=punteo;
@@ -32,11 +35,11 @@ public class Marcador {
         this.nombre = nombre;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -58,7 +61,9 @@ public class Marcador {
 
     @Override
     public String toString() {
-        return "Marcador{" + "nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", punteo=" + punteo + ", movimientos=" + movimientos + '}';
+        return "Puntos:"+punteo+" "
+                + " Movimientos:"+movimientos+" "
+                + " Nombre:"+nombre;
     }
     
 }
