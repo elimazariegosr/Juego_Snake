@@ -20,7 +20,8 @@ public class Juego_Snake {
          menu.opciones();*/
         //probando tablero
          Tablero tablero = new Tablero(base,altura);
-         tablero.mostrarTablero();
+         tablero.tabPosicion();
+         //mostrar asterisco como muro
     }
     
 }

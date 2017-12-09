@@ -10,37 +10,29 @@ package juego_snake;
  * @author Mazariegos
  */
 public class Posicion {
-    protected int x,y;
-    protected char figura;
+   
+    private int x,y;
+    private char figura;
     
-    public Posicion(){}
+    public void setX(int nPosicion){
+        this.x=nPosicion;
+    }
+    public int getX(){
+        return x;
+    }
+    public void setY(int nPosicion){
+        this.y=nPosicion;
+    }
+   
+    public int getY(){
+        return y;
+    }
     
-    public Posicion(int x, int y, char figura){
-        this.x=x;
-        this.y=y;
-        this.figura=figura;
-    }
-    public void setX(int x){
-        this.x=x;
-    }
-    public int getX(){return x;}
-    
-    public void setY(int y){
-        this.y=y;
-    }
-    public int getY(){return y;}
-
     public char getFigura() {
         return figura;
     }
 
-    public void setFigura(char figura) {
-        this.figura = figura;
+    public void setFigura(char nFigura) {
+        this.figura = nFigura;
     }
-    
-    @Override
-    public String toString() {
-        return "Posicion{" + "x=" + x + ", y=" + y + ", figura=" + figura + '}';
-    }
-    
 }
