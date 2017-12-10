@@ -20,5 +20,6 @@ public class Comida extends Posicion{
     public void generarAleatorio(Tablero tablero, Comida comida){
         tablero.setPosicionSnake(comida,(int) (Math.random() * (tablero.getAncho() -1)),
                 (int)(Math.random()*(tablero.getAltura()-1)));
+       
     }
 }

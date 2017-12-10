@@ -12,15 +12,15 @@ import java.util.Scanner;
  * @author Mazariegos
  */
 public class Juego {
- 
     
     public void juego(String nombrePrincipal){
+        
         Scanner opcion = new Scanner(System.in);
         MuroTablero muro = new MuroTablero('#');
         AccionSnake snake = new AccionSnake('%');
         Comida comida = new Comida('%','#','$');
         Marcador marcador = new Marcador();
-        
+        Posicion posicion = new Posicion();
         if(nombrePrincipal!=null){
             marcador.setNombre(nombrePrincipal);
         }else{
@@ -61,6 +61,7 @@ public class Juego {
             System.out.println( marcador.toString());
             System.out.println("------------------------------------------"
                     + "----------------");
+            System.out.println("Posicion x:"+posicion.getX());
             switch(opcion.nextLine()){
                 
                 case "a":
@@ -91,5 +92,9 @@ public class Juego {
             
             }
         }
+    }
+    
+    public void regresarJuego(){
+    
     }
 }

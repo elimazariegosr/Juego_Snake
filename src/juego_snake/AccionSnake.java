@@ -10,15 +10,21 @@ package juego_snake;
  * @author Mazariegos
  */
 public class AccionSnake extends Posicion {
-    
+            int posX ;
+            int posY ;
+
     //Constructor AccionSnake que recibe a la culebrita a donde moverse
     public AccionSnake( char figura){
         setFigura(figura);
     }
     
     public void agregarSnakeAleatorio(Tablero tablero, AccionSnake accionSnake){
-        tablero.setPosicionSnake(accionSnake,(int)(Math.random() * (tablero.getAncho()-1))
-                ,(int)(Math.random() * (tablero.getAltura()-1)));
+        posX = (int)(Math.random()*(tablero.getAncho()-1)); 
+        posY = (int)(Math.random()*(tablero.getAltura()-1));
+        tablero.setPosicionSnake(accionSnake,posX,posY);
+        System.out.println("posX:"+posX+" posY:"+posY);
+    }
+    public void guardarPartida(){
     }
     public void arriba(){
     }
