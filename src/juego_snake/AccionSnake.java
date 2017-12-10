@@ -44,37 +44,37 @@ public class AccionSnake extends Posicion {
 
             break;
             case 3:
-                if(posY<35){
-                    if(posY>0){
+                if(posY<34){
+                    if(posY>0&&posY<=32){
                         accionSnake.setY(posY +=1);
+                        if(posY==34){
+                            posY-=1;
+                        }
                         tablero.setPosicionSnake(accionSnake, posX,accionSnake.getY());
                     } 
                 }
         
             break;
             case 4:
-                    if(posX<=68){
-                    System.out.println("POS X1:"+posX);
+                if(posX<=68){
                     if(posX>0 &&posX<=67){
                         accionSnake.setX(posX +=1);
                         if(posX==69){
-                            posX-=1;
-                            System.out.println("topo en el muro"+posX);
-                            
-                            System.out.println("POS X2:"+posX);
+                        posX-=1;
                         }
                         tablero.setPosicionSnake(accionSnake, accionSnake.getX(), posY);
-                    
-                          System.out.println("POS X3:"+posX);
                     } 
-                    
+
                 }
         
             break;
             case 5:
-                if(posY<35){
-                   if(posY>0){
+                if(posY<34){
+                   if(posY>=2 && posY<34){
                         accionSnake.setY(posY-=1);
+                        if(posY==0){
+                            posY+=1;
+                        }
                         tablero.setPosicionSnake(accionSnake,posX,accionSnake.getY());
                     }
                 }

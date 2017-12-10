@@ -61,37 +61,31 @@ public class Juego {
             System.out.println( marcador.toString());
             System.out.println("------------------------------------------"
                     + "----------------");
-            System.out.println("Posicion x:"+posicion.getX());
             switch(opcion.nextLine()){
                 
                 case "a":
-                    System.out.println("Presionado");
                     snake.fSnake(tablero, snake, 2);
                     movimiento++;
                     marcador.setMovimientos(movimiento);
                 break;
                 case "s":
-                    System.out.println("Presionado1");
                     snake.fSnake(tablero, snake, 3);
                     movimiento++;
                     marcador.setMovimientos(movimiento);
                 break;
                 case "d":
-                    System.out.println("Presionado2");
                     snake.fSnake(tablero, snake, 4);
                     movimiento++;
                     marcador.setMovimientos(movimiento);
                 break;
                 case "w":
                     snake.fSnake(tablero, snake, 5);
-                    System.out.println("Presionado3");
                     movimiento++;
                     marcador.setMovimientos(movimiento);
                 break;
                 case "m":
                     MenuOpcion menuOpcion = new MenuOpcion();
                     menuOpcion.opciones();
-                    System.out.println("Presionad4");
                 break;
                 default:
                 System.out.println("Ingrese opcion correcta");
