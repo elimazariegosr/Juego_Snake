@@ -13,6 +13,7 @@ public class Tablero {
     private int ancho, altura;
     private char [][] tamañoMatriz;
 
+    public Tablero(){}
     public Tablero(int ancho, int altura) {
         this.ancho = ancho;
         this.altura = altura;
@@ -33,13 +34,14 @@ public class Tablero {
     public void tabPosicion(){
         for(int i = 0; i < this.altura ;i++){
             for(int j = 0; j < this.ancho ; j++){
-                this.tamañoMatriz[i][j]=' ';
+                this.tamañoMatriz[i][j]='.';
             }
         }
     }
     //limpiar posicion anteror de la serpiente
     public void limpiarPoscion(int x,int y){
-        this.tamañoMatriz[y][x]=' ';
+        this.tamañoMatriz[y][x]='.';  
+        
     }
     
     //getter mandandando nueva posicion
@@ -56,6 +58,11 @@ public class Tablero {
 
     public int getAltura() {
         return this.altura;
+    }
+    public void agregarItemSnake(int x,int y){
+        //this.tamañoMatriz[y][x]='%';
+        Comida comida = new Comida();
+        comida.posicionComidaX(x, y);
     }
     
 }

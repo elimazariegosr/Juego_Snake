@@ -17,11 +17,11 @@ public class Juego {
         
         Scanner opcion = new Scanner(System.in);
         MuroTablero muro = new MuroTablero('#');
-        AccionSnake snake = new AccionSnake('%');
+        AccionSnake snake = new AccionSnake('?');
         Comida comida = new Comida('%');
         Marcador marcador = new Marcador();
         Posicion posicion = new Posicion();
-        if(nombrePrincipal!=null){
+        if(nombrePrincipal!=" " && nombrePrincipal!=null){
             marcador.setNombre(nombrePrincipal);
         }else{
             System.out.println("No existe un nombre");
