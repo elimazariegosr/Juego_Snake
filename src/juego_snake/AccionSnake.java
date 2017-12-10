@@ -20,30 +20,56 @@ public class AccionSnake extends Posicion {
     
     public void fSnake(Tablero tablero, AccionSnake accionSnake,
             int opcion ){
+        System.out.println("posX:"+posX+" posY:"+posY);
         if(opcion==1){
             posX = (int)(Math.random()*(tablero.getAncho()-1)); 
             posY = (int)(Math.random()*(tablero.getAltura()-1));
             
             tablero.setPosicionSnake(accionSnake,posX,posY);
-            System.out.println("posX:"+posX+" posY:"+posY);
+            
         }else if(opcion==2){
             //mover izquierda
-            accionSnake.setX(posX -=1);
-            tablero.setPosicionSnake(accionSnake, accionSnake.getX(),
-                    posY);
-            
+            if(posX<=68){
+                if(posX>=2){
+                    accionSnake.setX(posX -=1);
+                    tablero.setPosicionSnake(accionSnake, accionSnake.getX(),
+                    posY);  
+                }
+            }else{
+                 System.out.println("ha topado contra el muro"+posX);
+            }
         }else if(opcion==3){
             //mover abajo
-            accionSnake.setY(posY +=1);
-            tablero.setPosicionSnake(accionSnake, posX,accionSnake.getY());
+            if(posY<=33){
+                if(posY>=2){
+                accionSnake.setY(posY +=1);
+                tablero.setPosicionSnake(accionSnake, posX,accionSnake.getY());
+                } 
+            }else{
+                 System.out.println("ha topado contra el muro"+posY);
+            }
         }else if(opcion==4){
             //mover derecha
-            accionSnake.setX(posX +=1);
-            tablero.setPosicionSnake(accionSnake, accionSnake.getX(), posY);
+            if(posX<=68){
+               if(posX>=2){
+                   
+                accionSnake.setX(posX +=1);
+                tablero.setPosicionSnake(accionSnake, accionSnake.getX(), posY);
+               } 
+            }else{
+                System.out.println("ha topado contra el muro"+posX);  
+            }
         }else if(opcion==5){
             //mover arriba
-            accionSnake.setY(posY-=1);
-            tablero.setPosicionSnake(accionSnake,posX,accionSnake.getY());
+            if(posY<=33){
+                if(posY>=2){
+                    accionSnake.setY(posY-=1);
+                    tablero.setPosicionSnake(accionSnake,posX,accionSnake.getY());
+                }else{
+                    System.out.println("ha topado contra el muro"+posY);
+                }
+                 
+            }
         }
         
     }
