@@ -18,20 +18,34 @@ public class AccionSnake extends Posicion {
         setFigura(figura);
     }
     
-    public void agregarSnakeAleatorio(Tablero tablero, AccionSnake accionSnake){
-        posX = (int)(Math.random()*(tablero.getAncho()-1)); 
-        posY = (int)(Math.random()*(tablero.getAltura()-1));
-        tablero.setPosicionSnake(accionSnake,posX,posY);
-        System.out.println("posX:"+posX+" posY:"+posY);
+    public void fSnake(Tablero tablero, AccionSnake accionSnake,
+            int opcion ){
+        if(opcion==1){
+            posX = (int)(Math.random()*(tablero.getAncho()-1)); 
+            posY = (int)(Math.random()*(tablero.getAltura()-1));
+            
+            tablero.setPosicionSnake(accionSnake,posX,posY);
+            System.out.println("posX:"+posX+" posY:"+posY);
+        }else if(opcion==2){
+            //mover izquierda
+            accionSnake.setX(posX -=1);
+            tablero.setPosicionSnake(accionSnake, accionSnake.getX(),
+                    posY);
+            
+        }else if(opcion==3){
+            //mover abajo
+            accionSnake.setY(posY +=1);
+            tablero.setPosicionSnake(accionSnake, posX,accionSnake.getY());
+        }else if(opcion==4){
+            //mover derecha
+            accionSnake.setX(posX +=1);
+            tablero.setPosicionSnake(accionSnake, accionSnake.getX(), posY);
+        }else if(opcion==5){
+            //mover arriba
+            accionSnake.setY(posY-=1);
+            tablero.setPosicionSnake(accionSnake,posX,accionSnake.getY());
+        }
+        
     }
-    public void guardarPartida(){
-    }
-    public void arriba(){
-    }
-    public void abajo(){
-    }
-    public void izquierda(){
-    }
-    public void derecha(){
-    }
+  
 }

@@ -44,7 +44,7 @@ public class Juego {
         muro.mostrarColumnaMuro(tablero, muro, 0);
         muro.mostrarColumnaMuro(tablero, muro, tablero.getAncho() -1);
         //agregar el snake aleatorio y comida 
-        snake.agregarSnakeAleatorio(tablero, snake);
+        snake.fSnake(tablero, snake,1);
         comida.generarAleatorio(tablero, comida);
         String accion;
         boolean salir =false;
@@ -66,20 +66,24 @@ public class Juego {
                 
                 case "a":
                     System.out.println("Presionado");
+                    snake.fSnake(tablero, snake, 2);
                     movimiento++;
                     marcador.setMovimientos(movimiento);
                 break;
                 case "s":
                     System.out.println("Presionado1");
+                    snake.fSnake(tablero, snake, 3);
                     movimiento++;
                     marcador.setMovimientos(movimiento);
                 break;
                 case "d":
                     System.out.println("Presionado2");
+                    snake.fSnake(tablero, snake, 4);
                     movimiento++;
                     marcador.setMovimientos(movimiento);
                 break;
                 case "w":
+                    snake.fSnake(tablero, snake, 5);
                     System.out.println("Presionado3");
                     movimiento++;
                     marcador.setMovimientos(movimiento);
