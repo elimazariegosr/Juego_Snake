@@ -18,7 +18,7 @@ public class Juego {
         Scanner opcion = new Scanner(System.in);
         MuroTablero muro = new MuroTablero('#');
         AccionSnake snake = new AccionSnake('%');
-        Comida comida = new Comida('%','#','$');
+        Comida comida = new Comida('&','@','$');
         Marcador marcador = new Marcador();
         Posicion posicion = new Posicion();
         if(nombrePrincipal!=null){
@@ -89,6 +89,8 @@ public class Juego {
                     marcador.setMovimientos(movimiento);
                 break;
                 case "m":
+                    MenuOpcion menuOpcion = new MenuOpcion();
+                    menuOpcion.opciones();
                     System.out.println("Presionad4");
                 break;
                 default:

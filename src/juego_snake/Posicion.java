@@ -35,4 +35,7 @@ public class Posicion {
     public void setFigura(char nFigura) {
         this.figura = nFigura;
     }
+    public char returAsterisco(){
+        return '#';
+    }
 }
