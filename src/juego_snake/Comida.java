@@ -11,15 +11,15 @@ package juego_snake;
  */
 public class Comida extends Posicion{
     
-    public Comida(char comida,char pared,char obstaculo){
-        setFigura(comida);
-        setFigura(pared);
-        setFigura(obstaculo); 
+    public Comida(char comida){
+        setFigura(comida); 
     }
     // generar obstaculos y comida
     public void generarAleatorio(Tablero tablero, Comida comida){
-        tablero.setPosicionSnake(comida,(int) (Math.random() * (tablero.getAncho() -1)),
-                (int)(Math.random()*(tablero.getAltura()-1)));
-       
+        for(int i=0;i<11;i++){
+            tablero.setPosicionSnake(comida,(int) (Math.random()*
+            (tablero.getAncho() -1)),
+            (int)(Math.random()*(tablero.getAltura()-1)));
+        }
     }
 }

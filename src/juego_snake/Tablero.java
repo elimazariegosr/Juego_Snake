@@ -37,7 +37,11 @@ public class Tablero {
             }
         }
     }
-  
+    //limpiar posicion anteror de la serpiente
+    public void limpiarPoscion(int x,int y){
+        this.tamañoMatriz[y][x]=' ';
+    }
+    
     //getter mandandando nueva posicion
     public char getPosicionSnake(int x, int y){
         return this.tamañoMatriz[y][x];

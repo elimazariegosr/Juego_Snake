@@ -37,11 +37,11 @@ public class AccionSnake extends Posicion {
                             System.out.println("topo en el muro"+posX);
                         }else{
                             tablero.setPosicionSnake(accionSnake, accionSnake.getX(),
-                            posY);  
+                            posY);
+                            tablero.limpiarPoscion(posX+1, posY);
                         }
                     }
                 }
-
             break;
             case 3:
                 if(posY<34){
@@ -51,9 +51,9 @@ public class AccionSnake extends Posicion {
                             posY-=1;
                         }
                         tablero.setPosicionSnake(accionSnake, posX,accionSnake.getY());
+                        tablero.limpiarPoscion(posX, posY-1);
                     } 
                 }
-        
             break;
             case 4:
                 if(posX<=68){
@@ -63,10 +63,9 @@ public class AccionSnake extends Posicion {
                         posX-=1;
                         }
                         tablero.setPosicionSnake(accionSnake, accionSnake.getX(), posY);
+                        tablero.limpiarPoscion(posX-1, posY);
                     } 
-
                 }
-        
             break;
             case 5:
                 if(posY<34){
@@ -76,6 +75,7 @@ public class AccionSnake extends Posicion {
                             posY+=1;
                         }
                         tablero.setPosicionSnake(accionSnake,posX,accionSnake.getY());
+                        tablero.limpiarPoscion(posX, posY+1);
                     }
                 }
             break;
