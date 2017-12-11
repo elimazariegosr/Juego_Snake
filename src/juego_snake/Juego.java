@@ -12,7 +12,16 @@ import java.util.Scanner;
  * @author Mazariegos
  */
 public class Juego {
-    
+            static int punteo = 10;
+            static int  idJuego;
+            static String  nombreGuardado;
+            static String fechaNGuardado;
+            static int movimientosGuardado;
+            static String punteoGuardado;
+            static int posXGuardado;
+            static int posYGuardado;
+            
+            
     public void juego(String nombrePrincipal){
         
         Scanner opcion = new Scanner(System.in);
@@ -21,8 +30,11 @@ public class Juego {
         Comida comida = new Comida('%');
         Marcador marcador = new Marcador();
         Posicion posicion = new Posicion();
-        if(nombrePrincipal!=" " && nombrePrincipal!=null){
+        if(nombrePrincipal!=null){
             marcador.setNombre(nombrePrincipal);
+            nombreGuardado=nombrePrincipal;
+            fechaNGuardado="1999";
+            
         }else{
             System.out.println("No existe un nombre");
         }
@@ -30,7 +42,7 @@ public class Juego {
         int conteo=0;
         int ancho=70;
         int altura=35;
-
+        
         //probando tablero
          Tablero tablero = new Tablero(ancho,altura);
          
@@ -53,12 +65,14 @@ public class Juego {
           
             tablero.mostrarTablero();
             int movimiento = marcador.getMovimientos();
-                
+            movimientosGuardado=movimiento;    
             System.out.println("");
             System.out.println("------------------------------------------"
                     + "----------------");
             System.out.println("Marcadores");
-            System.out.println( marcador.toString());
+            System.out.println("Nombre: "+marcador.getNombre());
+            System.out.println("Movimientos: "+movimiento);
+            System.out.println("punteo: "+marcador.getPunteo());
             System.out.println("------------------------------------------"
                     + "----------------");
             switch(opcion.nextLine()){
@@ -84,8 +98,8 @@ public class Juego {
                     marcador.setMovimientos(movimiento);
                 break;
                 case "m":
-                    MenuOpcion menuOpcion = new MenuOpcion();
-                    menuOpcion.opciones();
+                   idJuego++;
+                   salirJuego();
                 break;
                 default:
                 System.out.println("Ingrese opcion correcta");
@@ -93,8 +107,18 @@ public class Juego {
             }
         }
     }
-    
-    public void regresarJuego(){
+    public void salirJuego(){
+        MenuOpcion menuOpcion = new MenuOpcion();
+        AccionSnake guardarPoSnake = new AccionSnake();
+        posXGuardado=guardarPoSnake.guardarPosicionX();
+        posYGuardado=guardarPoSnake.guardarPosicionY();               
+        /*System.out.println("id Juego:"+idJuego+"| Nombre:" +nombreGuardado+
+                "| Fecha:"+fechaNGuardado+"| PosX:"+posXGuardado+
+                "| PosY:"+posYGuardado+"| Movimientos: "+movimientosGuardado+
+                "| Punteo:"+punteo);*/
+       //Mandar datos para historial y cargar Juego
+        menuOpcion.opciones(idJuego, nombreGuardado, fechaNGuardado,
+                posXGuardado, posYGuardado, movimientosGuardado, punteo);
     
     }
 }

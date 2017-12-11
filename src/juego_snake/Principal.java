@@ -15,7 +15,7 @@ public class Principal {
     public static void main(String[] args) {
        
         MenuOpcion menu = new MenuOpcion();
-        menu.opciones();
+        menu.opciones(0,null,null,0,0,0,0);
     }
     
 }

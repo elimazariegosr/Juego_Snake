@@ -14,9 +14,11 @@ public class Comida extends Posicion{
     int idComida ;
     int comidaX;
     int comidaY;
+    static int contador;
     static int [] datoComidaX;
     static int [] datoComidaY;
-
+    
+    static char [][]nuevoItem;
     public Comida() {
     }
         
@@ -27,13 +29,12 @@ public class Comida extends Posicion{
     // generar obstaculos y comida
     public void generarAleatorio(Tablero tablero, Comida comida){
         
-        
         datoComidaX = new int[10];
         datoComidaY = new int[10];
         for(int i=0;i<10;i++){
             comidaX=(int) (Math.random()*(tablero.getAncho() -1));
             comidaY=(int)(Math.random()*(tablero.getAltura()-1));
-        tablero.setPosicionSnake
+        tablero.setPosicionSnake    
         (comida,comidaX,comidaY);
             idComida++;
             datoComidaX[idComida-1]=comidaX;
@@ -42,14 +43,16 @@ public class Comida extends Posicion{
         }
     }
     public void posicionComidaX(int x, int y){
-        System.out.println("Posicion Actual: ("+x+", "+y+")");
-        
+        Marcador marcador = new Marcador();
+        Tablero tablero = new Tablero();
+        Juego juego = new Juego();
         for(int i = 0; i < datoComidaX.length; i++){
             for(int j = 0; j < datoComidaY.length; j++){
                 if(x==datoComidaX[i] && y==datoComidaY[j])
                 {
-                    System.out.println("Comiento en la posicion: "
-                    +"("+datoComidaX[i]+", "+datoComidaY[j]+")");
+                    System.out.println("Comiendo en la posicion: "
+                    +"("+datoComidaX[i]+", "+datoComidaY[j]+ ")");
+                    //juego.setMostrarPunteo(10);
                 }
             } 
         }  

@@ -64,5 +64,4 @@ public class Tablero {
         Comida comida = new Comida();
         comida.posicionComidaX(x, y);
     }
-    
 }

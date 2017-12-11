@@ -41,6 +41,7 @@ public class AccionSnake extends Posicion {
                             posY);
                             tablero.limpiarPoscion(posX+1, posY);
                             tablero.agregarItemSnake(posX, posY);
+                        
                         }
                     }
                 }
@@ -56,7 +57,7 @@ public class AccionSnake extends Posicion {
                         tablero.setPosicionSnake(accionSnake, posX,accionSnake.getY());
                         tablero.limpiarPoscion(posX, posY-1);
                         tablero.agregarItemSnake(posX, posY);
-
+                        
                     } 
                 }
             break;
@@ -71,7 +72,7 @@ public class AccionSnake extends Posicion {
                         tablero.setPosicionSnake(accionSnake, accionSnake.getX(), posY);
                         tablero.limpiarPoscion(posX-1, posY);
                         tablero.agregarItemSnake(posX, posY);
-
+                        
                     } 
                 }
             break;
@@ -86,11 +87,21 @@ public class AccionSnake extends Posicion {
                         tablero.setPosicionSnake(accionSnake,posX,accionSnake.getY());
                         tablero.limpiarPoscion(posX, posY+1);
                         tablero.agregarItemSnake(posX, posY);
- 
+                        
                    }
                 }
             break;
                 
         }
     }
+    public int guardarPosicionX(){
+        return posX;
+    }
+    public int guardarPosicionY(){
+        return posX;
+    }
+
+    public AccionSnake() {
+    }
+    
 }
