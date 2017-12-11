@@ -4,10 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Mazariegos/Documents/NetBeansProjects/Juego_Snake/src/juego_snake/AccionSnake.java</file>
+            <file>file:/C:/Users/Mazariegos/Documents/NetBeansProjects/Juego_Snake/src/juego_snake/Obstaculo.java</file>
+            <file>file:/C:/Users/Mazariegos/Documents/NetBeansProjects/Juego_Snake/src/juego_snake/MenuOpcion.java</file>
             <file>file:/C:/Users/Mazariegos/Documents/NetBeansProjects/Juego_Snake/src/juego_snake/Principal.java</file>
+            <file>file:/C:/Users/Mazariegos/Documents/NetBeansProjects/Juego_Snake/src/juego_snake/LimitePared.java</file>
             <file>file:/C:/Users/Mazariegos/Documents/NetBeansProjects/Juego_Snake/src/juego_snake/MuroTablero.java</file>
-            <file>file:/C:/Users/Mazariegos/Documents/NetBeansProjects/Juego_Snake/src/juego_snake/Comida.java</file>
             <file>file:/C:/Users/Mazariegos/Documents/NetBeansProjects/Juego_Snake/src/juego_snake/Tablero.java</file>
+            <file>file:/C:/Users/Mazariegos/Documents/NetBeansProjects/Juego_Snake/src/juego_snake/Comida.java</file>
             <file>file:/C:/Users/Mazariegos/Documents/NetBeansProjects/Juego_Snake/src/juego_snake/Juego.java</file>
         </group>
     </open-files>

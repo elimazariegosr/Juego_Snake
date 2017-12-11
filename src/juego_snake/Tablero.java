@@ -12,6 +12,7 @@ package juego_snake;
 public class Tablero {
     private int ancho, altura;
     private char [][] tamañoMatriz;
+    private int idPosicion=0;
 
     public Tablero(){}
     public Tablero(int ancho, int altura) {
@@ -23,9 +24,16 @@ public class Tablero {
     
     //mostrar el tablero 
     public void mostrarTablero(){
+        if(idPosicion <=2100){
+                idPosicion++;
+                }else if(idPosicion>2100){
+                idPosicion=0;    
+                }
         for(int i = 0; i < this.altura ; i++){
+            
             for(int j = 0; j < this.ancho ; j++){
                 System.out.print(this.tamañoMatriz[i][j]);
+                
             }
             System.out.println();
         }
@@ -34,13 +42,15 @@ public class Tablero {
     public void tabPosicion(){
         for(int i = 0; i < this.altura ;i++){
             for(int j = 0; j < this.ancho ; j++){
-                this.tamañoMatriz[i][j]='.';
+                this.tamañoMatriz[i][j]=' ';
+                
+                
             }
         }
     }
     //limpiar posicion anteror de la serpiente
     public void limpiarPoscion(int x,int y){
-        this.tamañoMatriz[y][x]='.';  
+        this.tamañoMatriz[y][x]=' ';  
         
     }
     
@@ -51,6 +61,7 @@ public class Tablero {
     //recibiendo nueva posicion 
     public void setPosicionSnake(Posicion pos,int x, int y){
         this.tamañoMatriz[y][x] = pos.getFigura();
+        
     }
     public int getAncho() {
         return this.ancho;
@@ -62,6 +73,12 @@ public class Tablero {
     public void agregarItemSnake(int x,int y){
         //this.tamañoMatriz[y][x]='%';
         Comida comida = new Comida();
-        comida.posicionComidaX(x, y);
+        comida.posicionComidaX(x, y,getIdPosicion());
     }
+
+    public int getIdPosicion() {
+        
+        return idPosicion;
+    }
+    
 }

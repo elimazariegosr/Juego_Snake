@@ -19,13 +19,19 @@ public class AccionSnake extends Posicion {
     }
     
     public void fSnake(Tablero tablero, AccionSnake accionSnake,
-            int opcion ){
+            int opcion,int posicionXg, int posicionYg){
         System.out.println("posX:"+posX+" posY:"+posY);
          switch(opcion){
             case 1:
-                posX = (int)(Math.random()*(tablero.getAncho()-1)); 
-                posY = (int)(Math.random()*(tablero.getAltura()-1));
+                if(posicionXg!=0 && posicionYg!=0){
+                posX=posicionXg;
+                posY=posicionYg;
+                }else{
+                posX = (int)(Math.random()*(tablero.getAncho()-10)); 
+                posY = (int)(Math.random()*(tablero.getAltura()-10));
             
+                
+                }
                 tablero.setPosicionSnake(accionSnake,posX,posY);
             break;
             //mover hacia la izquierda
