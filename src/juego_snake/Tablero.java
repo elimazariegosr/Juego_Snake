@@ -53,6 +53,10 @@ public class Tablero {
         this.tamañoMatriz[y][x]=' ';  
         
     }
+     public void limpiarPoscionNumeral(int x,int y){
+        this.tamañoMatriz[y][x]='#';  
+        
+    }
     
     //getter mandandando nueva posicion
     public char getPosicionSnake(int x, int y){
@@ -63,6 +67,13 @@ public class Tablero {
         this.tamañoMatriz[y][x] = pos.getFigura();
         
     }
+    public void setComidaPosicion(char figura,int x,int y){
+            if(this.tamañoMatriz[y][x]!='#'){
+             System.out.print(figura);
+             agregarItemSnake(x,y);
+            }
+
+    }
     public int getAncho() {
         return this.ancho;
     }
@@ -71,14 +82,24 @@ public class Tablero {
         return this.altura;
     }
     public void agregarItemSnake(int x,int y){
-        //this.tamañoMatriz[y][x]='%';
-        Comida comida = new Comida();
-        comida.posicionComidaX(x, y,getIdPosicion());
+        
+        Juego juego = new Juego();
+        int punteo=juego.mandarPunteo();
+        if(this.tamañoMatriz[y][x]=='%'){
+           punteo +=10;
+           System.out.println("punteo en tablero"+punteo);
+           juego.obtenerPunteo(punteo);
+      }else if(this.tamañoMatriz[y][x]=='$'){
+            punteo-=10;
+           System.out.println("punteo en tablero"+punteo);
+            juego.obtenerPunteo(punteo);
+      }else if(this.tamañoMatriz[y][x]=='#'){
+          limpiarPoscionNumeral(x,y);
+      }       
     }
 
     public int getIdPosicion() {
         
         return idPosicion;
     }
-    
 }

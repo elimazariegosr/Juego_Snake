@@ -18,9 +18,13 @@ public class Obstaculo extends Posicion {
     }
     
     public void generarObstaculo(Tablero tablero, Posicion posicion){
-        for(int i = 0; i < 40;i++){
+        for(int i = 0; i < 18;i++){
             limiteX=(int)(Math.random()*(tablero.getAncho()-1));
             limiteY=(int)(Math.random()*(tablero.getAltura()-1));
+            if(limiteX==0 && limiteY==0 && limiteX==69 && limiteY==34){
+                    limiteX=tablero.getAncho()/i;
+                    limiteY=tablero.getAltura()/i;
+                }
             tablero.setPosicionSnake(posicion, limiteX, limiteY);
         }
     }

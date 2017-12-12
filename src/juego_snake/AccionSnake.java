@@ -27,9 +27,12 @@ public class AccionSnake extends Posicion {
                 posX=posicionXg;
                 posY=posicionYg;
                 }else{
-                posX = (int)(Math.random()*(tablero.getAncho()-10)); 
-                posY = (int)(Math.random()*(tablero.getAltura()-10));
-            
+                posX = (int)(Math.random()*(tablero.getAncho()-4)); 
+                posY = (int)(Math.random()*(tablero.getAltura()-2));
+                if(posX==0 && posY==0 && posX==69 && posY==34){
+                    posX=tablero.getAncho()/2;
+                    posY=tablero.getAltura()/2;
+                }
                 
                 }
                 tablero.setPosicionSnake(accionSnake,posX,posY);
@@ -45,8 +48,8 @@ public class AccionSnake extends Posicion {
                         }else{
                             tablero.setPosicionSnake(accionSnake, accionSnake.getX(),
                             posY);
+                            tablero.agregarItemSnake(posX-1, posY);
                             tablero.limpiarPoscion(posX+1, posY);
-                            tablero.agregarItemSnake(posX, posY);
                         
                         }
                     }
@@ -61,8 +64,9 @@ public class AccionSnake extends Posicion {
                             posY-=1;
                         }
                         tablero.setPosicionSnake(accionSnake, posX,accionSnake.getY());
+                        tablero.agregarItemSnake(posX, posY+1);
+
                         tablero.limpiarPoscion(posX, posY-1);
-                        tablero.agregarItemSnake(posX, posY);
                         
                     } 
                 }
@@ -76,8 +80,9 @@ public class AccionSnake extends Posicion {
                         posX-=1;
                         }
                         tablero.setPosicionSnake(accionSnake, accionSnake.getX(), posY);
+                        tablero.agregarItemSnake(posX+1, posY);
+                       
                         tablero.limpiarPoscion(posX-1, posY);
-                        tablero.agregarItemSnake(posX, posY);
                         
                     } 
                 }
@@ -91,8 +96,9 @@ public class AccionSnake extends Posicion {
                             posY+=1;
                         }
                         tablero.setPosicionSnake(accionSnake,posX,accionSnake.getY());
+                        
+                        tablero.agregarItemSnake(posX, posY-1);
                         tablero.limpiarPoscion(posX, posY+1);
-                        tablero.agregarItemSnake(posX, posY);
                         
                    }
                 }

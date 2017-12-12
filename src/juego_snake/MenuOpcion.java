@@ -20,7 +20,7 @@ public class MenuOpcion {
        boolean desicion = true;
     
     public void opciones(int idGuardada,String nombreGuardado,String fechaGuardada,
-            int posXGuardada,int posYGuardada,int movGuardado,int punteoGuardado){
+            int posXGuardada,int posYGuardada,int movGuardado,int punteoGuardado) throws Exception{
             
         if(idGuardada!=0 && nombreGuardado!=null)
         {
@@ -44,6 +44,9 @@ public class MenuOpcion {
            
         }
         String nombre;
+        String dia;
+        String mes;
+        String anio;
        Scanner opcion = new Scanner(System.in);
        Principal principal = new Principal();
        Marcador marcador = new Marcador();
@@ -64,12 +67,32 @@ public class MenuOpcion {
                             + "-------------------------");
                     System.out.println("Ingrese Nombre");
                     nombre=opcion.nextLine();
-                    if(nombre!=null && desicion==true){
-                        juego.juego(nombre,0,0);
-                        desicion=false;
-                    }else{
-                        System.out.println("Ingrese al menos una letra");
+                    System.out.println("Fecha Nacimiento");
+                    System.out.println();
+                    System.out.println("ingrese Dia");
+                    dia=opcion.nextLine();
+                    
+                    System.out.println("ingrese Mes ");
+                    mes=opcion.nextLine();
+                    System.out.println("ingrese anio");
+                    anio=opcion.nextLine();
+                    String fecha = dia+"/"+mes+"/"+anio;
+                    try{
+                        if(Integer.valueOf(mes)>12 || Integer.valueOf(dia)>31){
+                            System.out.println("Digito incorrecto > 31 o >12");
+                        }else{
+                            if(nombre!=null && desicion==true){
+                                juego.juego(nombre,fecha,0,0);
+                                desicion=false;
+                            }else{
+                                System.out.println("Ingrese al menos una letra");
+                            }
+                        }    
+                    }catch(NumberFormatException nfe){
+                        System.out.println("Debe ingresar Numeros ");
                     }
+                    
+                    
                    
                 break;
                 case "2":

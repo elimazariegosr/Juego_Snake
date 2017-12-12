@@ -13,16 +13,17 @@ import java.util.Scanner;
  */
 public class Juego {
 
-    static int punteo = 10;
+            static int punteo = 10;
             static int  idJuego;
             static String  nombreGuardado;
             static String fechaNGuardado;
             static int movimientosGuardado;
-            static int punteoGuardado;
+            static int punteoGuardado=10;
             static int posXGuardado=0;
             static int posYGuardado=0;
             
-    public void juego(String nombrePrincipal,int posicionGx ,int posicionGy){
+            
+    public void juego(String nombrePrincipal,String fechaPrincipal,int posicionGx ,int posicionGy) throws Exception{
         
         Scanner opcion = new Scanner(System.in);
         LimitePared limite = new LimitePared('#');
@@ -64,16 +65,25 @@ public class Juego {
           
             tablero.mostrarTablero();
             marcador.setNombre(nombrePrincipal);
+            marcador.setFechaNacimiento(fechaPrincipal);
             nombreGuardado=nombrePrincipal;
+            fechaNGuardado=fechaPrincipal;
             int movimiento = marcador.getMovimientos();
-            movimientosGuardado=movimiento;    
+            movimientosGuardado=movimiento;  
+            if(punteoGuardado==100){
+                System.out.println("Ha ganado");
+                salirJuego();
+            }else if(punteoGuardado==0){
+                System.out.println("Ha perdido");
+            }
             System.out.println("");
             System.out.println("------------------------------------------"
                     + "----------------");
             System.out.println("Marcadores");
             System.out.println("Nombre: "+marcador.getNombre());
+            System.out.println("Fecha Nacimiento: "+marcador.getFechaNacimiento());
             System.out.println("Movimientos: "+movimiento);
-            System.out.println("punteo: "+comida.getPunteo());
+            System.out.println("punteo: "+punteoGuardado);
             System.out.println("------------------------------------------"
                     + "----------------");
             switch(opcion.nextLine()){
@@ -109,7 +119,7 @@ public class Juego {
         }
     }
     //metodo para salir del juego con M
-    public void salirJuego(){
+    public void salirJuego() throws Exception{
        
         AccionSnake guardarPoSnake = new AccionSnake();
         posXGuardado=guardarPoSnake.guardarPosicionX();
@@ -122,5 +132,11 @@ public class Juego {
                     posYGuardado, movimientosGuardado, punteoGuardado);
         }
      }
-   
+    public void obtenerPunteo(int punteo){
+        punteoGuardado = punteo;
+        System.out.println("punteo en juego");
+    }
+    public int mandarPunteo(){
+        return punteoGuardado;
+    }
 }
