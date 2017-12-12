@@ -51,7 +51,8 @@ public class Comida extends Posicion{
         Juego juego = new Juego();
         
         System.out.println("id Posicion:"+idPosicion);
-        /*for(int i = 0; i < 30; i++){
+        /*
+        for(int i = 0; i < 30; i++){
             for(int j = 0; j < 70; j++){
                  idNew++;   
                 if(x==datoComidaX[i] && y==datoComidaY[j]&&idPosicion==idNew)
@@ -64,7 +65,7 @@ public class Comida extends Posicion{
                 }
             }
         } */ 
-    }
+     }
     public int getPunteo(){
         return punteo;
     }
